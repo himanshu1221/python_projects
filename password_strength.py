@@ -1,9 +1,10 @@
 import sys
 import re
 
-password = sys.argv[1]
+#password = sys.argv[1]
 
 def passwordvalidation():
+    password = input("Enter the password: ")
     if len(password) < 8:
         print("Length of password is too short")
     elif re.search(r"[A-Z]", password) is None:
