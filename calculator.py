@@ -15,5 +15,10 @@ elif operation == '/':
         result = "Error: Division by zero is not allowed."
     else:
         result = num1 / num2
+else:
+    result = "Error: Invalid operation. Please use +, -, *, or /."
+
+if len(sys.argv) != 4:
+    print("Error: Please provide arguments in the format of: num1 operation num 2")
 
 print(result)
