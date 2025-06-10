@@ -20,8 +20,8 @@ while True:
                 print("It's a tie!")
                 ties += 1
             elif (user_input == "rock" and computer_input == "scissors") or \
-                 (user_input == "paper" and computer_input == "rock") or \
-                 (user_input == "scissors" and computer_input == "paper"):
+                (user_input == "paper" and computer_input == "rock") or \
+                (user_input == "scissors" and computer_input == "paper"):
                 print("You win!")
                 user_wins += 1
             else:
