@@ -18,7 +18,7 @@ fer = Fernet(key) ## Create a Fernet object with the key
 
 def view():
     with open("password.txt", "r") as f:
-        for line in f.readline():
+        for line in f.readlines():
             data = line.rstrip() ## Remove trailing whitespace
             user, passw = data.split("|") ## Split the line into username and password
             print("User:", user, "| Password:", # Print the username and password "Decrypted password: ",
