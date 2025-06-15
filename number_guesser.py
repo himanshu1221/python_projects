@@ -10,7 +10,7 @@ else:
     print("Invalid input please enter a number")
     exit()
 
-random_number = random.randint(0,max_range)
+random_number = random.randint(0,max_range) #randit includes both endpoints
 
 guesses = 0
 
