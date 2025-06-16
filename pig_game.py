@@ -25,19 +25,26 @@ player_scores = [0 for _ in range(players)]  # Initialize player scores
 #print(player_scores)
 
 while max(player_scores) < max_score: # Continue until a player reaches the max score
-    
-    current_score = 0
-    
-    should_roll = input("Do you want to roll the dice? (yes/no): ").lower()
-    if should_roll == "no":
-        break
-    if should_roll == "yes":
-        value = random_roll()
-        if value == 1:
-            print("You rolled a 1!")
-            break
-    else:
-        current_score += value
-        print(f"You rolled a {value}.")
 
-    print("Your current score is:", current_score)
+    for player_idx in range(players):
+        print(f"\nPlayer {player_idx + 1}'s turn")
+        current_score = 0 # Initialize current score for the player
+        
+        while True: # Loop until the player decides to roll or rolls a 1
+            should_roll = input("Do you want to roll the dice? (yes/no): ").lower() # Ask if the player wants to roll the dice
+            if should_roll != "yes": # Player chooses to roll the dice
+                break
+            value = random_roll() # Roll the dice
+            if value == 1:
+                print("You rolled a 1! Turn done!")
+                current_score = 0 # Reset current score if a 1 is rolled
+                break
+            else:
+                current_score += value
+                print(f"You rolled a {value}")
+
+            print(f"Current score: {current_score}")
+        
+        player_scores[player_idx] += current_score # Add the current score to the player's total score
+
+        print("your total score is now:", player_scores[player_idx])
